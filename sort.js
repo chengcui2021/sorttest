@@ -1,4 +1,4 @@
-const coordinates =[{x:54,y:79},{x:90,y:100},{x:54,y:60},{x:10,y:12},{x:1,y:1}];
+const coordinates =[{x:50,y:50},{x:54,y:79},{x:90,y:100},{x:54,y:60},{x:10,y:12},{x:1,y:1}];
 
 //caculate the distance between 2 mast
 const distance = (coor1, coor2) => {
@@ -14,6 +14,10 @@ const sortByDistance = (coordinates, point) => {
 };
 sortByDistance(coordinates, {x:50,y:50});
 
-console.log(coordinates);
+//find the closest pair of masts within a set of masts
+coordinates.map(coordinate=>{
+   sortByDistance(coordinates, coordinate)
+   console.log(coordinates[0], coordinates[1]);
+})
 
 module.exports = { sortByDistance }
